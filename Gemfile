@@ -8,8 +8,13 @@ gem 'pry'
 gem 'awesome_print'
 gem 'acts_as_tree'
 gem 'jquery-rails'
+gem 'capistrano'
 
+gem "mocha", :group => :test
 group :development, :test do
   gem 'nifty-generators'
 end
-gem "mocha", :group => :test
+
+group :production do
+  gem 'mysql2'
+end

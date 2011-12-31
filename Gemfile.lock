@@ -33,6 +33,12 @@ GEM
     awesome_print (1.0.1)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
+    capistrano (2.9.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     cocaine (0.2.1)
     coderay (0.9.8)
     devise (1.5.3)
@@ -41,6 +47,7 @@ GEM
       warden (~> 1.1)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    highline (1.6.9)
     i18n (0.5.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -57,6 +64,14 @@ GEM
     mime-types (1.17.2)
     mocha (0.10.0)
       metaclass (~> 0.0.1)
+    mysql2 (0.3.11)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.2.1)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
     nifty-generators (0.4.6)
     orm_adapter (0.0.5)
     paperclip (2.4.5)
@@ -111,9 +126,11 @@ PLATFORMS
 DEPENDENCIES
   acts_as_tree
   awesome_print
+  capistrano
   devise
   jquery-rails
   mocha
+  mysql2
   nifty-generators
   paperclip
   pry
