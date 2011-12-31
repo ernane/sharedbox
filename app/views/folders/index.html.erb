@@ -1,0 +1,25 @@
+<% title "Folders" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Parent</th>
+    <th>User</th>
+  </tr>
+  <% for folder in @folders %>
+    <tr>
+      <td><%= folder.name %></td>
+      <% if folder.parent_id.present? %>
+      <td><%= folder.parent.name %></td>
+      <% else %>
+      <td>Sem Descendentes</td>
+      <% end %>
+      <td><%= folder.user.name %></td>
+      <td><%= link_to "Show", folder %></td>
+      <td><%= link_to "Edit", edit_folder_path(folder) %></td>
+      <td><%= link_to "Destroy", folder, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Folder", new_folder_path %></p>
