@@ -1,4 +1,10 @@
-#require 'bundler/capistrano'
+# RVM bootstrap
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require 'rvm/capistrano'
+set :rvm_ruby_string, '1.9.2-p290'
+
+# bundler bootstrap
+require 'bundler/capistrano'
 
 set :application, "sharedbox"
 set :ip_address , "173.246.40.14"
@@ -41,6 +47,10 @@ namespace :deploy do
 
   task :stop, :roles => :app do
     # Do nothing.
+  end
+  
+  task :trust_rvmrc do
+      run "rvm rvmrc trust #{latest_release}"
   end
 
   desc "Restart Application"
